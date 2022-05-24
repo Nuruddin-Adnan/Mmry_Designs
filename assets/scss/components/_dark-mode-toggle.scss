@@ -1,0 +1,18 @@
+.dark-mode-toggle {
+    transform: rotate(-90deg);
+    .form-switch .form-check-input {
+        background-image: url(../images/sunlight.png);
+        border: 2px solid $color-red-orange;
+        background-color: transparent;
+        height: 1.2em;
+        width: 2.2em;
+    }
+}
+
+// light-header dark mode toggle button
+.light-header .dark-mode-toggle {
+    .form-switch .form-check-input {
+        background-image: url(../images/sunlight-light.png);
+        border: 2px solid #D9A3FA;
+    }
+}

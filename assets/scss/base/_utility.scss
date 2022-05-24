@@ -1,0 +1,21 @@
+.border-radius-20 {
+    border-radius: 20px;
+}
+
+.container-lg {
+    @media(min-width: 1600px){
+        max-width: 90%;
+        margin: auto;
+    }
+}
+
+// z-index
+.z-index-1001 {
+    z-index: 1001 !important;
+}
+.z-index-1002 {
+    z-index: 1002 !important;
+}
+.z-index-1003 {
+    z-index: 1003 !important;
+}

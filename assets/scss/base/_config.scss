@@ -1,0 +1,13 @@
+@import '../abstracts/mixins';
+
+body {
+  @include logo-toggle-mode(false);
+  font-family: 'Poppins', sans-serif;
+}
+
+body.dark-mode {
+  @include logo-toggle-mode(true);
+  background-color: $bg-dark;
+}
+
+

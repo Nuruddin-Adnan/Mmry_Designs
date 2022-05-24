@@ -1,0 +1,95 @@
+@import '../abstracts/mixins';
+
+.login {
+    background: url(../images/login/login-light-bg.png) no-repeat top left/cover;
+    text-align: center;
+    min-height: 100vh;
+    padding: 60px 0  30px 0;
+    display: grid;
+    place-items: center;
+
+
+    .login-main {
+        background: $color-white;
+        
+        @media(min-width: 992px) {
+            form {
+                width: 50%;
+                margin: auto;
+            }
+        }
+
+        .form-heading {
+            @include font-style(50px, rgba($color-red, 0.7), 700);
+            margin: 50px 0 30px 0;
+        }
+        .form-control {
+            @include font-style(22px, rgba($color-black, 1), 400);
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 50px;
+
+            @media(min-width: 1400px) {
+                padding: 1rem;
+            }
+        }
+        .form-control::placeholder {
+            opacity: 0.6;
+            font-style: italic;
+        }
+        .form-check-label {
+            @include font-style(18px, rgba($color-black, .5), 300);
+        }
+        .form-check-input:checked {
+            background-color: $color-red-orange;
+            border-color: $color-red;
+        }
+        .login-btn {
+            background: linear-gradient(to right, $color-red, $color-red-orange);
+            @include font-style(26px, rgba($color-white, 1), 500);
+            border-radius: 50px;
+            text-transform: uppercase;
+            border: none;
+
+            @media(min-width: 1400px) {
+                padding: 1rem;
+            }
+        }
+        .fa-caret-right {
+            font-size: 25px;
+            color: $color-white;
+            position: absolute;
+            top: 30%;
+            right: 20px;
+        }
+    }
+}
+
+
+// ############## Dark mode css #############
+.dark-mode {
+    .login {
+        .login-main {
+            background: url('../images/login/login-dark.png') no-repeat center center/cover;
+    
+            .form-heading {
+                @include font-style(50px, rgba($color-white, 0.7), 700);
+            }
+            .form-control {
+                @include font-style(22px, rgba($color-white, .5), 400);
+                background:rgba($color-white, 0.15);
+                border: none;
+            }
+            .form-check-label {
+                @include font-style(18px, rgba($color-white, .5), 300);
+            }
+        }
+
+        &.login-alt {
+            background: url('../images/login/login-dark-bg.png');
+            .login-main {
+                background: url('../images/login/login-alt-dark.png') no-repeat center center/cover;
+            }
+        }
+    }
+}

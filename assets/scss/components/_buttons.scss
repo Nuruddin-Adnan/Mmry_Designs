@@ -1,0 +1,11 @@
+.btn-red-gradient {
+    background: linear-gradient(to right, $color-red, $color-red-orange);
+    border: transparent;
+    color: $color-white;
+    transition: all 0.2s linear;
+
+    &:hover {
+        background: linear-gradient(45deg, $color-red, $color-red-orange);
+        color: $color-white;
+    }
+}

@@ -1,0 +1,23 @@
+@mixin font-style($font-size, $color, $font-weight) {
+    font-size: $font-size;
+    color: $color;    
+    font-weight: $font-weight;
+}
+
+@mixin logo-toggle-mode($dark-mode: false){
+    @if $dark-mode == true {
+        .light-mode-logo {
+            display: none;
+        }
+        .dark-mode-logo {
+            display: block;
+        }
+    } @else {
+        .light-mode-logo {
+            display: block;
+        }
+        .dark-mode-logo {
+            display: none;
+        }
+    }
+}

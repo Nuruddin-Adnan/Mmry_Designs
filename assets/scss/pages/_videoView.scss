@@ -1,0 +1,174 @@
+@import '../abstracts/mixins';
+
+.video-banner {
+    min-height: 100vh;
+    background: url(../images/blissful-young-lady-sunglasses-fooling-around-during-photoshoot-chair-laughing-winsome-girl-white-shoes.png) no-repeat center center/cover;
+    padding: 100px 0;
+    position: relative;
+
+    @media(max-width: 768px) {
+        min-height: 60vh;
+    }
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to bottom, transparent, $color-white);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .banner-sub-title {
+        @include font-style(30px, rgba($color-white, 1), 400);
+        font-style: italic;
+    }
+    .banner-title {
+        @include font-style(70px, rgba($color-white, 1), 500);
+    }
+
+    //   **********  video-full start ********** 
+    .video-full{
+        .wrapper {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 999;
+        }
+
+      
+        .video-main {
+            position: relative;
+            display: inline-block;
+        }
+
+        .video {
+            height: 75px;
+            width: 75px;
+            line-height: 75px;
+            text-align: center;
+            color: #fff;
+            // border: 15px solid rgba($color-white, 0.5);
+            border-radius: 100%;
+            display: inline-block;
+            background: linear-gradient(180deg, #CE283C, #F47B60);
+            z-index: 999;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        @keyframes waves {
+            0% {
+            -webkit-transform: scale(0.2, 0.2);
+            transform: scale(0.2, 0.2);
+            opacity: 0;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            }
+            50% {
+            opacity: 0.9;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+            }
+            100% {
+            -webkit-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+            opacity: 0;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            }
+        }
+
+        
+        .waves {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: transparent;
+            opacity: 0;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            border: 20px solid rgba($color-white, 0.5);
+            border-radius: 100%;
+            right: -50%;
+            bottom: -50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            -webkit-animation: waves 3s ease-in-out infinite;
+            animation: waves 3s ease-in-out infinite;
+        }
+                
+        .wave-1 {
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+        }
+
+        .wave-2 {
+            -webkit-animation-delay: .5s;
+            animation-delay: .5s;
+        }
+
+        .wave-3 {
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+        .wave-4 {
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+    }
+
+
+    // ********** End of video-full ********** 
+}
+
+.subscrib-action {
+    @media (max-width: 768px) {
+        .btn-red-gradient {
+            font-size: 16px;
+        }
+    }
+    .nav-link {
+        @include font-style(20px, rgba($color-black, 0.8), 400);
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+            padding: .5rem;
+        }
+    }
+}
+
+.recommended {
+    .slider-default .slick-next,
+    .slider-default .slick-prev {
+        @media (min-width: 992px) and (max-width: 1599px) {
+            top: 20%
+        }
+    }
+}
+
+@media(min-width:992px) {
+    .YouTubePopUp-Content{
+        max-width: 60%;
+    }
+    .YouTubePopUp-Content iframe {
+        height: 70vh !important;
+    }
+}
+
+
+// ####### dark mode #########
+.dark-mode {
+    .video-banner {
+        &::before {
+            background: linear-gradient(to bottom, transparent, $bg-dark);
+        }
+    }
+
+    .subscrib-action {
+        .nav-link {
+            @include font-style(20px, rgba($color-white, 1), 400);
+        }
+    }
+}

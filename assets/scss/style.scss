@@ -1,0 +1,38 @@
+/*=== abstracts css start === */
+@import 'abstracts/fonts';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+/*===// end of abstracts css === */
+
+
+/*=== base css start === */
+@import 'base/global';
+@import 'base/config';
+@import 'base/utility';
+/*===// end of base css === */
+
+
+/*=== components css start === */
+@import 'components/dark-mode-toggle';
+@import 'components/section-heading';
+@import 'components/buttons';
+@import 'components/slider';
+@import 'components/cards';
+@import 'components/subscrib-action';
+@import 'components/modal';
+/*===// end of components css === */
+
+
+/*=== layouts css start === */
+@import 'layouts/navbar';
+@import 'layouts/footer';
+/*===// end of layouts css === */
+
+
+/*=== pages start === */
+@import 'pages/login';
+@import 'pages/profile';
+@import 'pages/videoView';
+/*===// end of pages  === */
+
+

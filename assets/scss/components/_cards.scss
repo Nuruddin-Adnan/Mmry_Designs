@@ -1,0 +1,200 @@
+@import '../abstracts/mixins';
+
+
+// ###### card-3d start ######
+.card-3d {
+    width: 90%;
+    margin: 0 auto 80px auto;
+    transition: all 0.2s linear;
+   
+
+    &.shadow-lg {
+        box-shadow: 0 1rem 2rem  rgba(0,0,0,.5)!important;
+        border-radius: 15px;
+    }
+
+    img {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .middle-img,
+    .back-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.2s linear;
+    }
+    .back-img {
+        transform: rotate(7deg);
+        z-index: -2;
+    }
+    .middle-img {
+        transform: rotate(-7deg);
+        z-index: -1;
+    }
+
+    .card-title {
+        background: rgba($color-black, 0.5);
+        @include font-style(28px, $color-white, 600);
+        text-align: center;
+        padding: 6px 15px;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    .text-top {
+        @include font-style(15px, $color-white, 500);
+        width: 100%;
+        padding: 5px 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba($color-black, 0.6);
+        color: $color-white;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .text-bottom {
+        @include font-style(15px, $color-white, 500);
+        padding: 5px 15px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: rgba($color-black, 0.6);
+        color: $color-white;
+        z-index: 1;
+        border-radius: 30px;
+        border-top-right-radius: 0;
+    }
+}
+// ###### end of card-3d ######
+
+
+// ###### card-video start ######
+.card-video {
+    margin-bottom: 5px;
+    .img {
+        box-shadow: 0 0.5rem 0.8rem rgba(0,0,0,.5);
+        .thumbnail {
+            overflow: hidden;
+            border-radius: 20px;
+            .overlay {
+                position: absolute;
+                width: 50%;
+                height: 280%;
+                background: rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                top: -99px;
+                left: 50%;
+                transform: rotate(45deg);
+
+                @media(max-width: 768px){
+                    display: none;
+                }
+            }
+            .video-length {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: 2;
+                background: rgba($color-black, 0.6);
+                @include font-style(14px, $color-white, 500);
+                padding: 5px 10px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+            }
+        }
+    }
+
+    .text {
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            display: block;
+            margin: 15px 10px 0 0;
+        }
+        .title {
+            @include font-style(16px,#1C234A , 600);
+            margin: 15px 0 5px 0;
+        }
+        .creator-name {
+            @include font-style(13px, rgba(#1C234A, 0.5), 500);
+        }
+
+        .dropdown {
+            .btn {
+                color: rgba($color-black, 0.35);
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            .dropdown-item {
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+    }
+
+
+    // ######## horizontal card #######
+    &.card-horizontal {
+        display: flex;
+        .img {
+           .thumbnail {
+                max-width: 280px;
+                min-width: 180px;
+                height: 100%;
+                border-radius: 15px;
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .overlay {
+                    height: 330%;
+                }
+           }
+        }
+        .text {
+            margin-left: 10px;
+            .title {
+                @include font-style(16px,#ffffff , 600);
+                margin: 15px 0 5px 0;
+            }
+            .creator-name {
+                @include font-style(13px, rgba(#ffffff, 0.5), 500);
+            }
+        }
+    }
+}
+
+.dark-mode {
+    .card-video.darkMode-elable {
+    
+        .text {
+            .title {
+                @include font-style(16px, $color-white , 600);
+                margin: 15px 0 5px 0;
+            }
+            .creator-name {
+                @include font-style(13px, rgba($color-white, 0.5), 500);
+            }
+
+            .dropdown {
+                .btn {
+                    color: rgba($color-white, 0.35);
+                }
+            }
+        }
+    }
+}
+// ###### end of card-video ######
