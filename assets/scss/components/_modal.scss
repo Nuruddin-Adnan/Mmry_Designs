@@ -21,6 +21,7 @@
 
 
 
+// subscrib-popup start
 #subscrib-action-modal {
   .modal-title {
     @include font-style(30px, rgba($color-black, 0.8), 600);
@@ -41,6 +42,22 @@
       }
   }
 }
+// end of subscrib-popup 
+
+
+
+// select-photo-popup start
+#select-photo-popup{
+    label {
+        @include font-style(18px, rgba($color-black, 0.8), 400);
+    }
+
+    .form-check-input:checked {
+        background-color: $color-red-orange;
+        border-color: $color-red-orange;
+    }
+}
+// end of select-photo-popup 
 
 
 
@@ -65,5 +82,16 @@
             color: rgba($color-white, 0.8);
         }
     }
+
+    
+
+    // select-photo-popup start
+    #select-photo-popup{
+        label {
+            color:rgba($color-white, 01);
+        }
+    }
+    // end of select-photo-popup 
+
     
 }

@@ -1,0 +1,76 @@
+@import '../abstracts/mixins';
+
+.upload-video {
+    border-radius: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 20px solid #f9f9f9;
+
+    .page-title {
+        @include font-style(40px, rgba($color-black, 0.8), 600);
+        border-bottom: 4px solid #E04222;
+        display: inline-block;
+    }
+
+    label {
+        @include font-style(18px, rgba($color-black, 0.8), 400);
+    }
+
+    .form-check-input:checked {
+        background-color: $color-red-orange;
+        border-color: $color-red-orange;
+    }
+
+    .form-control {
+        border-radius: 30px;
+        padding-right: 35px;
+        margin-top: 5px;
+        @include font-style(16px, rgba($color-black, 0.8), 400);
+
+        &::placeholder {
+            @include font-style(16px, rgba($color-black, 0.8), 400);
+        }
+    }
+
+    .position-relative .fa-times-circle {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba($color-black, 0.35);
+    }
+}
+
+
+
+
+// ######## dark mode #######
+.dark-mode {
+    .upload-video {
+        background-color: $bg-dark;
+        border: 20px solid #272737;
+        
+        .page-title {
+            color: white;
+            border-bottom: 4px solid #E04222;
+        }
+    
+        label {
+            color: white;
+        }
+    
+        .form-control {
+            background-color: transparent;
+            border: 1px solid #707070;
+            @include font-style(16px, rgba($color-white, 1), 400);
+
+            &::placeholder {
+                @include font-style(16px, rgba($color-white, 1), 400);
+            }
+        }
+    
+        .position-relative .fa-times-circle {
+            color: rgba($color-white, 0.35);
+        }
+    }
+}
